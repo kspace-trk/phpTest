@@ -28,8 +28,8 @@
                             $i++;
                             echo $x;
                             for($m = 1; $m < 10; $m++){
-                            $x = $n * $m;
-                            echo "<td>$x</td>";
+                                $x = $n * $m;
+                                echo "<td>$x</td>";
                             }
                             echo $trEnd;
                         }
@@ -48,8 +48,10 @@ table{
     border: 1px solid #707070;
 }
 td{
-     border: 1px solid #707070;
-     padding: 5px;
+    width: 3rem;
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #707070;
 }
 .color-cell{
     background-color: #707070;
