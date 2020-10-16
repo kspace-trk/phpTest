@@ -6,8 +6,9 @@
     </head>
     <body>
         <div class="container">
-        <p>なんちゃって掲示板システム</p>
-            <button onclick="location.href='articlePost.php'">新規投稿</button>
+            <p>以下の内容でよろしいですか？</p>
+            <div class="confirm-contents"></div>
+            <button onclick="location.href='index.php'">投稿</button>
         </div>
     </body>
 </html>
@@ -22,11 +23,18 @@ body{
 .container {
     width: 80%;
     max-width: 1000px;
-    height: 200px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 75px;
+}
+.confirm-contents {
+    max-width: 100%;
+    width: 600px;
+    height: 300px;
+    border: 3px solid #404040;
 }
 button {
     width: 400px;

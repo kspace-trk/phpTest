@@ -6,8 +6,9 @@
     </head>
     <body>
         <div class="container">
-        <p>なんちゃって掲示板システム</p>
-            <button onclick="location.href='articlePost.php'">新規投稿</button>
+        <p>記事入力画面</p>
+            <textarea name="article"></textarea>
+            <button onclick="location.href='confirm.php'">新規投稿</button>
         </div>
     </body>
 </html>
@@ -22,11 +23,17 @@ body{
 .container {
     width: 80%;
     max-width: 1000px;
-    height: 200px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 75px;
+}
+textarea {
+    max-width: 100%;
+    width: 600px;
+    height: 400px;
 }
 button {
     width: 400px;
