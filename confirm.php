@@ -7,7 +7,12 @@
     <body>
         <div class="container">
             <p>以下の内容でよろしいですか？</p>
-            <div class="confirm-contents"></div>
+            <div class="confirm-contents">
+                <?php
+                    $article=$_POST['article'];
+                    echo  $article;
+                ?>
+            </div>
             <button onclick="location.href='index.php'">投稿</button>
         </div>
     </body>

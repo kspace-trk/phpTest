@@ -6,9 +6,11 @@
     </head>
     <body>
         <div class="container">
-        <p>記事入力画面</p>
-            <textarea name="article"></textarea>
-            <button onclick="location.href='confirm.php'">新規投稿</button>
+            <p>記事入力画面</p>
+            <form action="confirm.php" method="post" class="contents">
+                <textarea name="article"></textarea>
+                <button type="submit" onclick="location.href='confirm.php'">新規投稿</button>
+            </form>
         </div>
     </body>
 </html>
@@ -23,12 +25,18 @@ body{
 .container {
     width: 80%;
     max-width: 1000px;
-    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+}
+.contents {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 75px;
+    margin-top: 40px;
 }
 textarea {
     max-width: 100%;
@@ -40,6 +48,7 @@ button {
     height: 75px;
     background-color: #FFFFFF;
     border: 4px solid #2C80F3;
+    margin-top: 40px;
 }
 button:hover {
     background-color: #2C80F3;
