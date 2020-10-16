@@ -2,20 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>ページタイトル</title>
+        <title>なんちゃって掲示板システム</title>
     </head>
     <body>
         <div class="container">
             <p>記事入力画面</p>
             <form action="confirm.php" method="post" class="contents">
-                <textarea name="article"></textarea>
-                <button type="submit" onclick="location.href='confirm.php'">新規投稿</button>
+                <textarea name="article"><?php if(isset($_POST['article'])){ $article=$_POST['article']; echo $article; } ?></textarea>
+                <button type="submit">新規投稿</button>
             </form>
+                <button type="submit" onclick="location.href='index.php'">取り消し</button>
+            
         </div>
     </body>
 </html>
 <style>
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;

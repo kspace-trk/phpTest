@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>ページタイトル</title>
+        <title>なんちゃって掲示板システム</title>
     </head>
     <body>
         <div class="container">
