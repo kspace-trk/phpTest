@@ -6,41 +6,14 @@
         <title>ページタイトル</title>
     </head>
     <body>
-<?php
-    $hostname = '127.0.0.1';
-    $username = 'root';
-    $password = 'dbpass';
-    $dbname = 'testdb2';
-    $tablename = 'money_management_list';
-
-    $link = mysqli_connect($hostname,$username,$password);
-    if(!$link){
-        exit("Connect error!");
-    }
-
-    $result = mysqli_query($link,"CREATE DATABASE $dbname CHARACTER SET utf8");
-    if(!$result) {
-        echo "Create database $dbname failed!\n";
-    }
-
-    $result = mysqli_query($link,"USE $dbname");
-    if(!$result) {
-        exit("USE failed!");
-    }
-    $result = mysqli_query($link,"CREATE TABLE $tablename (id INT NOT NULL AUTO_INCREMENT, today DATE, inprice INT, outprice INT, memo VARCHAR(20)BINARY, PRIMARY KEY(id)) CHARACTER SET utf8");
-    if(!$result) {
-        exit("Create table $tablename failed!\n");
-    }
-
-    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, today='2020-10-25', inprice=20000, outprice=0, memo='work'");
-    if(! $result){
-        exit("INSERT error!");
-    }
-
-    echo "Create db and table and update succeeded!\n";
-
-    mysqli_close($link);
-?>
+        <form action="confirm.php" method="post" class="contents">
+                id<input type="text" name="id"></input>
+                date<input type="text" name="date"></input>
+                inPrice<input type="text" name="inPrice"></input>
+                outPrice<input type="text" name="outPrice"></input>
+                contents<input type="text" name="contents"></input>
+                <button type="submit">レコード追加</button>
+        </form>
     </body>
 </html>
 
