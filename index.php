@@ -12,7 +12,7 @@
                 inPrice<input type="text" name="inPrice"></input>
                 outPrice<input type="text" name="outPrice"></input>
                 contents<input type="text" name="contents"></input>
-                <button type="submit">レコード追加</button>
+                <button onclick="location.href='articlePost.php'">レコード追加</button>
         </form>
     </body>
 </html>
