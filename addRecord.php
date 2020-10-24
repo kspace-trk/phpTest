@@ -28,7 +28,7 @@
     }
 
     $result = mysqli_query($link,"INSERT INTO $tablename SET today='$today', inPrice=$inPrice, outPrice=$outPrice, contents='$contents'");
-    echo "id:$id, today:$today, inPrice:$inPrice, outPrice:$outPrice, contents:$contents";
+    echo "today:$today, inPrice:$inPrice, outPrice:$outPrice, contents:$contents";
     if(!$result){
         exit("INSERT error!");
     }
