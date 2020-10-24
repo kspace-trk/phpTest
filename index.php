@@ -10,29 +10,20 @@
     $hostname = '127.0.0.1';
     $username = 'root';
     $password = 'dbpass';
-    $dbname = 'testdb2';
-    $tablename = 'money_management_list';
+    $dbname = 'testDB';
+    $tablename = 'table1';
 
     $link = mysqli_connect($hostname,$username,$password);
     if(!$link){
         exit("Connect error!");
     }
 
-    $result = mysqli_query($link,"CREATE DATABASE $dbname CHARACTER SET utf8");
-    if(!$result) {
-        echo "Create database $dbname failed!\n";
-    }
-
     $result = mysqli_query($link,"USE $dbname");
     if(!$result) {
         exit("USE failed!");
     }
-    $result = mysqli_query($link,"CREATE TABLE $tablename (id INT NOT NULL AUTO_INCREMENT, today DATE, inprice INT, outprice INT, memo VARCHAR(20)BINARY, PRIMARY KEY(id)) CHARACTER SET utf8");
-    if(!$result) {
-        exit("Create table $tablename failed!\n");
-    }
 
-    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, today='2020-10-25', inprice=20000, outprice=0, memo='work'");
+    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, date='2020-10-25', inPrice=20000, outPrice=0, contents='work'");
     if(! $result){
         exit("INSERT error!");
     }
