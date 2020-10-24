@@ -14,7 +14,7 @@
     $tablename = 'money_management_list';
 
     $link = mysqli_connect($hostname,$username,$password);
-    if(! $link){
+    if(!$link){
         exit("Connect error!");
     }
 
@@ -27,13 +27,12 @@
     if(!$result) {
         exit("USE failed!");
     }
-
-    $result = mysqli_query($link,"CREATE TABLE $tablename (id INT NOT NULL AUTO_INCREMENT, today DATE, inprice INT, outprice INT, memo VARCHAR(30) BINARY, PRIMARY KEY(id)) CHARACETR SET utf8");
+    $result = mysqli_query($link,"CREATE TABLE $tablename (id INT NOT NULL AUTO_INCREMENT, today DATE, inprice INT, outprice INT, memo VARCHAR(20)BINARY, PRIMARY KEY(id)) CHARACTER SET utf8");
     if(!$result) {
         exit("Create table $tablename failed!\n");
     }
 
-    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, today='2020-10-25', inPrice=20000, outPrice=0, memo='work'");
+    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, today='2020-10-25', inprice=20000, outprice=0, memo='work'");
     if(! $result){
         exit("INSERT error!");
     }
