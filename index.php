@@ -32,7 +32,7 @@
         exit("Create table $tablename failed!\n");
     }
 
-    $result = mysqli_query($link,"INSERT INTO $tablename SET id=0, today='2020-10-25', inprice=20000, outprice=0, memo='work'");
+    $result = mysqli_query($link,"INSERT INTO $tablename SET today='2020-10-25', inprice=20000, outprice=0, memo='work'");
     if(! $result){
         exit("INSERT error!");
     }
