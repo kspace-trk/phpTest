@@ -8,7 +8,6 @@
         <?php
             if(isset($_POST['article'])){
                 $article=$_POST['article'];
-                echo $article;
             }
             $hostname = '127.0.0.1';
             $username = 'root';
@@ -43,7 +42,6 @@
                 if(! $result){
                     exit("INSERT error!");
                 }
-                echo "Create db and table and update succeeded!\n";
             }
         ?>
         <div class="container">
@@ -55,12 +53,14 @@
                 }
                 while($row = mysqli_fetch_row($result))
                 {
+                    echo "<div class='article-text'>";
                     foreach($row as $key => $value)
                     {
+                        echo "<p>";
                         echo htmlspecialchars($value);
-                        
+                        echo "</p>";
                     }
-                    echo "<br>";
+                    echo "</div>";
                 }
                 mysqli_close($link);
             ?>
@@ -74,12 +74,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80vh;
 }
 .container {
     width: 80%;
     max-width: 1000px;
-    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,10 +88,18 @@ button {
     height: 75px;
     background-color: #FFFFFF;
     border: 4px solid #2C80F3;
+    margin-top: 30px;
 }
 button:hover {
     background-color: #2C80F3;
     color: #FFFFFF;
+}
+.article-text {
+    display: flex;
+    justify-content: space-around;
+    max-width: 400px;
+    width: 90%;
+    border-bottom: 4px solid #cccccc;
 }
 </style>
     
