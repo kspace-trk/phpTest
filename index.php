@@ -34,7 +34,7 @@
                 $result = mysqli_query($link,"CREATE TABLE $tablename (id INT NOT NULL AUTO_INCREMENT, article VARCHAR(840)BINARY, PRIMARY KEY(id)) CHARACTER SET utf8");
                 if(!$result) {
                     exit("Create table $tablename failed!\n");
-                } 
+                }
             }
             //ここまでないとき
 
@@ -45,15 +45,24 @@
                 }
                 echo "Create db and table and update succeeded!\n";
             }
-
-            mysqli_close($link);
         ?>
         <div class="container">
         <p>なんちゃって掲示板システム</p>
-        1   <?php
-                if(isset($_POST['article'])){
-                    echo $article;
+            <?php
+                $result = mysqli_query($link,"SELECT * FROM $tablename");
+                if(!$result){
+                    echo "Select error on table ($tablename)!";
                 }
+                while($row = mysqli_fetch_row($result))
+                {
+                    foreach($row as $key => $value)
+                    {
+                        echo htmlspecialchars($value);
+                        
+                    }
+                    echo "<br>";
+                }
+                mysqli_close($link);
             ?>
             <button onclick="location.href='articlePost.php'">新規投稿</button>
         </div>
